@@ -13,7 +13,13 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int compare(int value1, int value2) {
-        return -2;
+
+        if(value1 == value2)
+            return 0;
+        else if(value1 < value2)
+            return -1;
+        else
+            return 1;
     }
 
     /**
@@ -22,7 +28,11 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int maxFrom(int value1, int value2) {
-        return -1;
+
+        if(value1 > value1)
+            return value1;
+        else
+            return value2;
     }
 
     /**
@@ -31,7 +41,15 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int maxFrom(int[] values) {
-        return -1;
+
+        int maximum = values[0];
+
+        for(int n=1; n < values.length; n++) {
+            if (values[n] > maximum)
+                maximum = values[n];
+        }
+
+        return maximum;
     }
 
     /**
@@ -40,7 +58,19 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int sum(int[] values) {
-        return -1;
+
+        if(values.length == 0) {
+            return 0;
+        }
+        else {
+            int total = values[0];
+
+            for (int n = 1; n < values.length; n++) {
+                total = total + values[n];
+            }
+
+            return total;
+        }
     }
 
     /**
@@ -63,7 +93,7 @@ public class SimpleMathService implements MathService {
     }
 
     /**
-     * Метод возвращает число, которе находится на заданной позиции (счет начинается с нуля) в ряду фибоначчи.
+     * Метод возвращает число, которое находится на заданной позиции (счет начинается с нуля) в ряду фибоначчи.
      *
      * Ряд фибоначчи - ряд, следующие элементы которого состоят из суммы двух предыдущих.
      * Ряд начинается 0 и 1.
@@ -104,6 +134,16 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] reverseArray(int[] values) {
-        return new int[]{};
+
+        int temp;
+        int length = values.length;
+
+        for(int n=0; n < (length - n); n++) {
+            temp = values[n];
+            values[n] = values[length - n -1];
+            values[length - n -1] = temp;
+        }
+
+        return values;
     }
 }
