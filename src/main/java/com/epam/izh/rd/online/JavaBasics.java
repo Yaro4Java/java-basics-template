@@ -60,6 +60,31 @@ public class JavaBasics {
         }/* END OF sum(array) DEBUGGING SECTION */
 
 
+        {/* SECTION FOR DEBUGGING isPrimary() METHOD ALGORITHM */
+
+            //Input parameters
+            int i = 4; //Например для числа 22 вернется false, а для числа 23 true.
+
+            //Implementation of the isPrimary() algorithm
+            boolean isPrime = true;
+
+            if(i < 2){
+                isPrime = false;
+            } else {
+                for (int n = 2; n < i; n++) {
+                    if((i % n) == 0 ){
+                        isPrime = false;
+                    }
+                }
+            }
+
+            //Typing out the result of analysis
+            String negative = isPrime ? "" : " not";
+            System.out.println("isPrimary(): " + i + " is" + negative + " a prime number");
+
+        }/* END OF isPrimary() DEBUGGING SECTION */
+
+
         {/* SECTION FOR DEBUGGING reverseArray(array) METHOD ALGORITHM */
 
             //Input parameters
@@ -90,7 +115,7 @@ public class JavaBasics {
             out = out + "}";
 
             //Typing out the result of analysis
-            System.out.println("reverseArray(array): The array " + out + " is reverse to the given array: " + in);
+            System.out.println("reverseArray(array): The array " + out + " is reverse to the given one: " + in);
 
         }/* END OF reverseArray(array) DEBUGGING SECTION */
 

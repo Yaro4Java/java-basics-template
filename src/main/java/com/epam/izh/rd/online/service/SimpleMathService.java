@@ -124,7 +124,20 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public boolean isPrimary(int number) {
-        return false;
+
+        boolean isPrime = true;
+
+        if(number < 2){
+            isPrime = false;
+        } else {
+            for (int n = 2; n < number; n++) {
+                if((number % n) == 0 ){
+                    isPrime = false;
+                }
+            }
+        }
+
+        return isPrime;
     }
 
     /**
