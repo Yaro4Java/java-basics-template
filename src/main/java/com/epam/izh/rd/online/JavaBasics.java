@@ -10,6 +10,7 @@ public class JavaBasics {
 
             //Input parameters
             int val[] = {-1, -3, 477, 8, 55, 22, -5};
+
             //MaxFrom(array) algorithm implementation
             int ma = val[0];
 
@@ -31,6 +32,7 @@ public class JavaBasics {
             System.out.println("MaxFrom(array): Number " + ma + " is the maximum value within the given array: " + s);
 
         }/* END OF MaxFrom(array) DEBUGGING SECTION */
+
 
         {/* SECTION FOR DEBUGGING sum(array) METHOD ALGORITHM */
 
@@ -58,6 +60,60 @@ public class JavaBasics {
                 System.out.println("sum(array): The sum of all elements of the given array " + s + " is " + total);
             }
         }/* END OF sum(array) DEBUGGING SECTION */
+
+
+        {/* SECTION FOR DEBUGGING getEvenDigits(array) METHOD ALGORITHM */
+
+            //Input parameters
+            int arr[] = {5, 4, 1, 1}; //для списка {-1, -3, 4, 8, 5, 22, 17} метод должен вернуть {4, 8, 22}
+
+            //Building string of input array elements
+            String in = "{" + String.valueOf(arr[0]);
+            for (int k = 1; k < arr.length; k++) {
+                in = in + ", " + String.valueOf(arr[k]);
+            }
+            in = in + "}";
+
+            //Implementation of the getEvenDigits(array) algorithm
+            int size = 0;
+
+            //Counting even numbers
+            for (int n = 0; n < arr.length; n++) {
+                if((arr[n] % 2) == 0){
+                    size++;
+                }
+            }
+
+            //Creating new array for even digits
+            int even[] = new int[size];
+
+            if(size > 0) {
+                //Filling even digits array
+                for (int n = 0, pos = 0; n < arr.length; n++) {
+                    if ((arr[n] % 2) == 0) {
+                        even[pos++] = arr[n];
+                    }
+                }
+            }
+
+            String out = "";//String to write output array elements
+
+            if(size > 0) {
+                //Building string of output array elements
+                out = "{" + String.valueOf(even[0]);
+                for (int k = 1; k < even.length; k++) {
+                    out = out + ", " + String.valueOf(even[k]);
+                }
+                out = out + "}";
+            }
+
+            //Typing out the result of analysis
+            if(size == 0) {
+                System.out.println("getEvenDigits(array): There are no even digits within the given array " + in);
+            } else {
+                System.out.println("getEvenDigits(array): The even digits from the given array " + in + " are as follows: " + out);
+            }
+        }/* END OF getEvenDigits(array) DEBUGGING SECTION */
 
 
         {/* SECTION FOR DEBUGGING isPrimary() METHOD ALGORITHM */
@@ -118,10 +174,5 @@ public class JavaBasics {
             System.out.println("reverseArray(array): The array " + out + " is reverse to the given one: " + in);
 
         }/* END OF reverseArray(array) DEBUGGING SECTION */
-
-
-
-
-
     }
 }
