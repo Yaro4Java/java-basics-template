@@ -9,7 +9,7 @@ public class JavaBasics {
         {/* SECTION FOR DEBUGGING MaxFrom(array) METHOD ALGORITHM */
 
             //Input parameters
-            int val[] = {-1, -3, 477, 8, 55, 22, -5};
+            int[] val = {-1, -3, 477, 8, 55, 22, -5};
 
             //MaxFrom(array) algorithm implementation
             int ma = val[0];
@@ -37,7 +37,7 @@ public class JavaBasics {
         {/* SECTION FOR DEBUGGING sum(array) METHOD ALGORITHM */
 
             //Input parameters
-            int a[] = {1, 2, 0}; //{-1, -3, 4, 8, 5, 22, -5}
+            int[] a = {1, 2, 0}; //{-1, -3, 4, 8, 5, 22, -5}
 
             //sum(array) algorithm implementation
             if (a.length == 0) {
@@ -65,7 +65,7 @@ public class JavaBasics {
         {/* SECTION FOR DEBUGGING getEvenDigits(array) METHOD ALGORITHM */
 
             //Input parameters
-            int arr[] = {5, 4, 1, 1}; //для списка {-1, -3, 4, 8, 5, 22, 17} метод должен вернуть {4, 8, 22}
+            int[] arr = {5, 4, 1, 1}; //для списка {-1, -3, 4, 8, 5, 22, 17} метод должен вернуть {4, 8, 22}
 
             //Building string of input array elements
             String in = "{" + String.valueOf(arr[0]);
@@ -85,7 +85,7 @@ public class JavaBasics {
             }
 
             //Creating new array for even digits
-            int even[] = new int[size];
+            int[] even = new int[size];
 
             if(size > 0) {
                 //Filling even digits array
@@ -144,7 +144,7 @@ public class JavaBasics {
         {/* SECTION FOR DEBUGGING reverseArray(array) METHOD ALGORITHM */
 
             //Input parameters
-            int arr[] = {-1, -3, 25, 100}; //{-1, -3, 4, 8, 5, 22, -5};
+            int[] arr = {-1, -3, 25, 100}; //{-1, -3, 4, 8, 5, 22, -5};
 
             //Building string of input array elements
             String in = "{" + String.valueOf(arr[0]);

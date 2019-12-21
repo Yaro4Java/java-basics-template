@@ -90,7 +90,7 @@ public class SimpleMathService implements MathService {
         }
 
         //Creating new array for even digits
-        int even[] = new int[size];
+        int[] even = new int[size];
 
         if(size > 0) {
             //Filling even digits array
