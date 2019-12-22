@@ -6,12 +6,12 @@ import com.epam.izh.rd.online.service.SimpleMathService;
 public class JavaBasics {
     public static void main(String[] args) {
 
-        {/* SECTION FOR DEBUGGING MaxFrom(array) METHOD ALGORITHM */
+        {/* SECTION FOR DEBUGGING maxFrom(array) METHOD ALGORITHM */
 
             //Input parameters
             int[] val = {-1, -3, 477, 8, 55, 22, -5};
 
-            //MaxFrom(array) algorithm implementation
+            //maxFrom(array) algorithm implementation
             int ma = val[0];
 
             for (int n = 1; n < val.length; n++) {
@@ -31,7 +31,7 @@ public class JavaBasics {
             //Typing out the result of analysis
             System.out.println("MaxFrom(array): Number " + ma + " is the maximum value within the given array: " + s);
 
-        }/* END OF MaxFrom(array) DEBUGGING SECTION */
+        }/* END OF maxFrom(array) DEBUGGING SECTION */
 
 
         {/* SECTION FOR DEBUGGING sum(array) METHOD ALGORITHM */
@@ -152,6 +152,32 @@ public class JavaBasics {
             System.out.println("calcFactorial(): Factorial of " + n + " is " + n + "! = " + s + factor);
 
         }/* END OF calcFactorial() DEBUGGING SECTION */
+
+
+        {/* SECTION FOR DEBUGGING calcFibonacci() METHOD ALGORITHM */
+
+            //Input parameters
+            int n = 10; //Fibonacci(n = 0, 1, 2, ...) = 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ... ; F(0) = 0, F(9) = 34.
+
+            //Implementation of the calcFibonacci() algorithm
+            long fibonacci = 0;
+            long preElement1 = 1;
+            long preElement2 = 0;
+
+            //Counting n-th element of the Fibonacci sequence
+            if(n > 0) {
+                for (int i = 1; i <= n; i++){
+                    fibonacci = preElement1 + preElement2;
+                    preElement1 = preElement2;
+                    preElement2 = fibonacci;
+                }
+            }
+
+
+            //Typing out the result of analysis
+            System.out.println("calcFibonacci(): Element at the position " + n + " in Fibonacci sequence is " + "F(" + n + ") = " + fibonacci);
+
+        }/* END OF calcFibonacci() DEBUGGING SECTION */
 
 
         {/* SECTION FOR DEBUGGING isPrimary() METHOD ALGORITHM */

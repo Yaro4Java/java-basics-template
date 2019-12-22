@@ -136,7 +136,21 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFibonacci(int number) {
-        return -1L;
+
+        long fibonacci = 0;
+        long preElement1 = 1;
+        long preElement2 = 0;
+
+        //Counting n-th element of the Fibonacci sequence
+        if(number > 0) {
+            for (int i = 1; i <= number; i++){
+                fibonacci = preElement1 + preElement2;
+                preElement1 = preElement2;
+                preElement2 = fibonacci;
+            }
+        }
+
+        return fibonacci;
     }
 
     /**
