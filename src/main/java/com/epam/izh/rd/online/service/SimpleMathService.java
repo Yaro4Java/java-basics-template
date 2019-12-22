@@ -13,7 +13,13 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int compare(int value1, int value2) {
-        return -2;
+
+        if(value1 == value2)
+            return 0;
+        else if(value1 < value2)
+            return -1;
+        else
+            return 1;
     }
 
     /**
@@ -22,7 +28,11 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int maxFrom(int value1, int value2) {
-        return -1;
+
+        if(value1 > value1)
+            return value1;
+        else
+            return value2;
     }
 
     /**
@@ -31,7 +41,15 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int maxFrom(int[] values) {
-        return -1;
+
+        int maximum = values[0];
+
+        for(int n=1; n < values.length; n++) {
+            if (values[n] > maximum)
+                maximum = values[n];
+        }
+
+        return maximum;
     }
 
     /**
@@ -40,7 +58,19 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int sum(int[] values) {
-        return -1;
+
+        if(values.length == 0) {
+            return 0;
+        }
+        else {
+            int total = values[0];
+
+            for (int n = 1; n < values.length; n++) {
+                total = total + values[n];
+            }
+
+            return total;
+        }
     }
 
     /**
@@ -49,7 +79,29 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] getEvenDigits(int[] values) {
-        return new int[]{};
+
+        int size = 0;
+
+        //Counting even numbers
+        for (int n = 0; n < values.length; n++) {
+            if((values[n] % 2) == 0){
+                size++;
+            }
+        }
+
+        //Creating new array for even digits
+        int[] even = new int[size];
+
+        if(size > 0) {
+            //Filling even digits array
+            for (int n = 0, pos = 0; n < values.length; n++) {
+                if ((values[n] % 2) == 0) {
+                    even[pos++] = values[n];
+                }
+            }
+        }
+
+        return even;
     }
 
     /**
@@ -59,11 +111,21 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFactorial(int initialVal) {
-        return -1L;
+
+        long factor = 1;
+
+        //Counting factorial of n
+        if(initialVal > 0) {
+            for (int i = 1; i < initialVal; ){
+                factor = factor * ++i;
+            }
+        }
+
+        return factor;
     }
 
     /**
-     * Метод возвращает число, которе находится на заданной позиции (счет начинается с нуля) в ряду фибоначчи.
+     * Метод возвращает число, которое находится на заданной позиции (счет начинается с нуля) в ряду фибоначчи.
      *
      * Ряд фибоначчи - ряд, следующие элементы которого состоят из суммы двух предыдущих.
      * Ряд начинается 0 и 1.
@@ -74,7 +136,21 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFibonacci(int number) {
-        return -1L;
+
+        long fibonacci = 0;
+        long preElement1 = 1;
+        long preElement2 = 0;
+
+        //Counting n-th element of the Fibonacci sequence
+        if(number > 0) {
+            for (int i = 1; i <= number; i++){
+                fibonacci = preElement1 + preElement2;
+                preElement1 = preElement2;
+                preElement2 = fibonacci;
+            }
+        }
+
+        return fibonacci;
     }
 
     /**
@@ -83,7 +159,19 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] sort(int[] values) {
-        return new int[]{};
+
+        for (int pos = 0; pos < (values.length - 1); pos++) {
+            int min = values[pos];
+            for(int i = pos + 1; i < values.length; i++) {
+                if(values[i] < min) {
+                    values[pos] = values[i];
+                    values[i] = min;
+                    min = values[pos];
+                }
+            }
+        }
+
+        return values;
     }
 
     /**
@@ -94,7 +182,20 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public boolean isPrimary(int number) {
-        return false;
+
+        boolean isPrime = true;
+
+        if(number < 2){
+            isPrime = false;
+        } else {
+            for (int n = 2; n < number; n++) {
+                if((number % n) == 0 ){
+                    isPrime = false;
+                }
+            }
+        }
+
+        return isPrime;
     }
 
     /**
@@ -104,6 +205,16 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] reverseArray(int[] values) {
-        return new int[]{};
+
+        int temp;
+        int length = values.length;
+
+        for(int n=0; n < (length - n); n++) {
+            temp = values[n];
+            values[n] = values[length - n -1];
+            values[length - n -1] = temp;
+        }
+
+        return values;
     }
 }
