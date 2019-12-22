@@ -179,6 +179,43 @@ public class JavaBasics {
         }/* END OF calcFibonacci() DEBUGGING SECTION */
 
 
+        {/* SECTION FOR DEBUGGING sort(array) METHOD ALGORITHM */
+
+            //Input parameters
+            int[] arr = {-1, 100, -99, 0}; //{-1, -3, 4, 8, 5, 22, -5} --> {-5, -3, -1, 4, 5, 8, 22}
+
+            //Building string of input array elements
+            String in = "{" + String.valueOf(arr[0]);
+            for (int k = 1; k < arr.length; k++) {
+                in = in + ", " + String.valueOf(arr[k]);
+            }
+            in = in + "}";
+
+            //Implementation of the sort(array) algorithm
+            for (int pos = 0; pos < (arr.length - 1); pos++) {
+                int min = arr[pos];
+                for(int i = pos + 1; i < arr.length; i++) {
+                    if(arr[i] < min) {
+                        arr[pos] = arr[i];
+                        arr[i] = min;
+                        min = arr[pos];
+                    }
+                }
+            }
+
+            //Building string of output array elements
+            String out = "{" + String.valueOf(arr[0]);
+            for (int k = 1; k < arr.length; k++) {
+                out = out + ", " + String.valueOf(arr[k]);
+            }
+            out = out + "}";
+
+            //Typing out the result of analysis
+            System.out.println("sort(array): Sorted elements of the given array " + in + " are as follows: " + out);
+
+        }/* END OF sort(array) DEBUGGING SECTION */
+
+
         {/* SECTION FOR DEBUGGING isPrimary() METHOD ALGORITHM */
 
             //Input parameters
