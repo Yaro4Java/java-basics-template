@@ -116,6 +116,44 @@ public class JavaBasics {
         }/* END OF getEvenDigits(array) DEBUGGING SECTION */
 
 
+        {/* SECTION FOR DEBUGGING calcFactorial() METHOD ALGORITHM */
+
+            //Input parameters
+            int n = 10; //для числа 5 метод должен вернуть 120. Факториал 0 равен 1
+
+            //Implementation of the calcFactorial() algorithm
+            long factor = 1;
+
+            //Counting factorial of n
+            if(n > 0) {
+                for (int i = 1; i < n; ){
+                    factor = factor * ++i;
+                }
+            }
+
+            //Building the string to write factorial of n
+            String s = "";
+
+            if(n < 2) {
+                s = "";
+            } else {
+                s = "1";
+                for(int i = 2; i <= n; i++) {
+                    if ((i == 4) && (n > 6)) {
+                        s = s + "*...";
+                    } else if ((i < 4) || (i > (n - 2))) {
+                        s = s + "*" + i;
+                    }
+                }
+                s = s + " = ";
+            }
+
+            //Typing out the result of analysis
+            System.out.println("calcFactorial(): Factorial of " + n + " is " + n + "! = " + s + factor);
+
+        }/* END OF calcFactorial() DEBUGGING SECTION */
+
+
         {/* SECTION FOR DEBUGGING isPrimary() METHOD ALGORITHM */
 
             //Input parameters

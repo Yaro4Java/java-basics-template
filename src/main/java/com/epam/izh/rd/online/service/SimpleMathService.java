@@ -111,7 +111,17 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFactorial(int initialVal) {
-        return -1L;
+
+        long factor = 1;
+
+        //Counting factorial of n
+        if(initialVal > 0) {
+            for (int i = 1; i < initialVal; ){
+                factor = factor * ++i;
+            }
+        }
+
+        return factor;
     }
 
     /**
