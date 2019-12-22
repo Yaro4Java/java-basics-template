@@ -173,7 +173,6 @@ public class JavaBasics {
                 }
             }
 
-
             //Typing out the result of analysis
             System.out.println("calcFibonacci(): Element at the position " + n + " in Fibonacci sequence is " + "F(" + n + ") = " + fibonacci);
 
